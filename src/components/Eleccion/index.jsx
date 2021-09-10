@@ -8,8 +8,8 @@ export class Eleccion extends React.Component{
                 <h3>Seleccion anterior: {this.props.anterior}</h3>
 
                 <h3>Historial de opciones elegidas:</h3>
-                <ul>
-                {this.props.selecciones.map((ele, i )=> <li key={i}>{ele}</li>)}
+                <ul className="elegidos">
+                    {this.props.selecciones.map((ele, i )=><li key={i}>{ele}</li>)}
                 </ul>
             </div>
         )

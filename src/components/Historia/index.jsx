@@ -3,6 +3,7 @@ import data from "../data";
 import { Opciones } from '../Opciones';
 import { Eleccion } from '../Eleccion';
 import '../../index.css'
+import Swal from 'sweetalert2'
 
 export class Historia extends React.Component{
     constructor(){
@@ -42,13 +43,34 @@ export class Historia extends React.Component{
 
             }
         } else{
-            alert("FIN")
-            this.setState({posicion:0, seleccionAnterior: "", listaSelecciones:[]})
+            /*Swal.fire('FIN')*/
+            Swal.fire({
+                title: 'FIN',
+                text: "¿Quieres volver a iniciar?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: ' Si ',
+                cancelButtonText: ' No '
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    this.setState({posicion:0, seleccionAnterior: ""})
+                }
+              })
         }
     }
 
 
     componentDidMount(){
+        Swal.fire({
+            imageUrl: '../inicio.gif',
+            imageWidth: 150,
+            imageHeight: 150,
+            title: 'Bienvenidos',
+            showConfirmButton: false,
+            timer: 2000
+          })
         console.log("Componente montado")
     }
 
@@ -71,7 +93,7 @@ export class Historia extends React.Component{
         return(
             <div className="layout">
                 <h1 className="historia">{data[this.state.posicion].historia}</h1>
-                
+
                 <Opciones opcion={data[this.state.posicion].opciones} click={this.handleOption}/>
 
                 <Eleccion anterior={this.state.seleccionAnterior} selecciones={this.state.listaSelecciones}/>
