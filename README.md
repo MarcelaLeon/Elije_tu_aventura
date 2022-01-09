@@ -9,11 +9,10 @@
 -   Se muestra en pantalla la última elección que realizó el usuario (por ejemplo, "Selección previa: A").
 -   Se muestran todas las selecciones anteriores (por ejemplo, "Anteriores: A B A").  
 
-[elige tu aventura 🚀- heroku](https://damp-thicket-60623.herokuapp.com/)
+[Elige tu aventura 🚀- despliegue en heroku](https://damp-thicket-60623.herokuapp.com/)
 
 
-[funcionamiento de la app](https://i.imgur.com/aMMRpla.mp4)
-
+![Funcionamiento de la app](https://i.imgur.com/aMMRpla.mp4){width='200px'}
 
 
 ## Getting Started with Create React App
